@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JobCompare — Home</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page--home">
+<header class="site-header">
+  <div class="brand">
+    <div class="logo"></div>
+    <div class="brand-text">
+      <strong>JobCompare</strong>
+      <span>Pick the right offer—science, not vibes.</span>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="compare.html">Compare</a>
+    <a href="results.html">Results</a>
+    <a href="save.html">Save/Share</a>
+  </nav>
+</header>
+
+<main class="hero">
+  <div class="hero-inner">
+    <h1 class="title">Choose with confidence</h1>
+    <p class="subtitle">Compare salary, commute, growth, culture, and benefits. Save, reload, and share securely.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="compare.html">Start Comparing</a>
+      <label class="btn btn-ghost file-label">
+        Load Saved Comparison
+        <input id="homeImport" type="file" accept="application/json" hidden />
+      </label>
+    </div>
+    <p class="muted">No tracking • Offline-ready • Your data stays in your browser</p>
+  </div>
+  <div class="bg-shine" aria-hidden="true"></div>
+</main>
+
+<script src="app.js"></script>
+<script>
+  window.JobCompare?.initHome?.();
+</script>
+</body>
+</html>

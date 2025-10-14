@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JobCompare — Save & Share</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="page--save">
+<header class="site-header">
+  <div class="brand">
+    <div class="logo"></div>
+    <div class="brand-text"><strong>JobCompare</strong><span>Save & Share</span></div>
+  </div>
+  <nav class="nav">
+    <a href="compare.html">Compare</a>
+    <a href="results.html">Results</a>
+    <a class="active" href="save.html">Save/Share</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card card--full">
+    <h2>Export your comparison</h2>
+    <p>Download a JSON file you can re-import later, or copy a shareable link that encodes your comparison in the URL.</p>
+
+    <div class="actions">
+      <button id="exportBtn" class="btn btn-primary">Download JSON</button>
+      <label class="btn btn-ghost file-label">
+        Import JSON
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </label>
+      <a class="btn btn-ghost" href="compare.html">Back to Compare</a>
+    </div>
+
+    <div class="sharebox">
+      <label>Shareable Link</label>
+      <div class="share-row">
+        <input id="shareUrl" type="text" readonly />
+        <button id="copyBtn" class="btn btn-alt">Copy</button>
+      </div>
+      <p class="muted tiny">Anyone with the link can view the data client-side. No server upload.</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast">Copied</div>
+<script src="app.js"></script>
+<script>window.JobCompare?.initSave?.();</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JobCompare — Results</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="page--results">
+<header class="site-header">
+  <div class="brand">
+    <div class="logo"></div>
+    <div class="brand-text"><strong>JobCompare</strong><span>Results</span></div>
+  </div>
+  <nav class="nav">
+    <a href="compare.html">Compare</a>
+    <a class="active" href="results.html">Results</a>
+    <a href="save.html">Save/Share</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="grid grid-2n1">
+    <div class="card">
+      <div class="winner">
+        <div>
+          <div class="badge">Recommendation</div>
+          <h2 id="winnerTitle" class="winner-title">—</h2>
+          <p id="winnerReason" class="winner-reason">—</p>
+        </div>
+        <div class="scorechip" id="winnerScore">—</div>
+      </div>
+
+      <div class="metric-group">
+        <div class="metric">
+          <h3>Overall Score</h3>
+          <div class="bar"><span id="scoreA"></span></div>
+          <div class="bar"><span id="scoreB"></span></div>
+          <div class="labels">
+            <span id="labelA">Offer A</span>
+            <span id="labelB">Offer B</span>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="metric">
+            <h3>Compensation (Adjusted)</h3>
+            <div class="bar"><span id="compA"></span></div>
+            <div class="bar"><span id="compB"></span></div>
+            <div class="labels tiny"><span id="compAText">$—</span><span id="compBText">$—</span></div>
+          </div>
+          <div class="metric">
+            <h3>Commute & Flex</h3>
+            <div class="bar"><span id="flexA"></span></div>
+            <div class="bar"><span id="flexB"></span></div>
+            <div class="labels tiny"><span id="flexAText">—</span><span id="flexBText">—</span></div>
+          </div>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="metric"><h3>Growth</h3><div class="bar"><span id="growthA"></span></div><div class="bar"><span id="growthB"></span></div></div>
+          <div class="metric"><h3>Culture</h3><div class="bar"><span id="cultureA"></span></div><div class="bar"><span id="cultureB"></span></div></div>
+          <div class="metric"><h3>Benefits</h3><div class="bar"><span id="benefitA"></span></div><div class="bar"><span id="benefitB"></span></div></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-ghost" href="compare.html">← Back to Edit</a>
+        <a class="btn btn-primary" href="save.html">Save / Share</a>
+        <button id="printBtn" class="btn btn-ghost">Print / PDF</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <canvas id="radar" class="radar"></canvas>
+    </div>
+  </section>
+</main>
+
+<canvas id="confetti" class="confetti"></canvas>
+<script src="app.js"></script>
+<script>window.JobCompare?.initResults?.();</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JobCompare — Compare Offers</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page--compare">
+<header class="site-header">
+  <div class="brand">
+    <div class="logo"></div>
+    <div class="brand-text">
+      <strong>JobCompare</strong>
+      <span>Compare offers</span>
+    </div>
+  </div>
+  <nav class="nav">
+    <a class="active" href="compare.html">Compare</a>
+    <a href="results.html">Results</a>
+    <a href="save.html">Save/Share</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="grid grid-2">
+    <!-- Offer A -->
+    <div class="card">
+      <h2>Offer A</h2>
+      <div class="row2">
+        <div class="field"><label>Role / Company</label><input id="a_title" type="text" placeholder="Frontend @ Bloomly"/></div>
+        <div class="field"><label>Location</label><input id="a_loc" type="text" placeholder="City, State"/></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Base Salary (USD)</label><input id="a_salary" type="number" step="1000" min="0" placeholder="125000"/></div>
+        <div class="field"><label>Annual Bonus (USD)</label><input id="a_bonus" type="number" step="1000" min="0" placeholder="10000"/></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Equity/RSU (USD/yr)</label><input id="a_equity" type="number" step="1000" min="0" placeholder="15000"/></div>
+        <div class="field"><label>Cost of Living Index <span class="hint">(100 = avg)</span></label><input id="a_coli" type="number" min="60" max="200" step="1" placeholder="110"/></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Commute (one-way, min)</label><input id="a_commute" type="number" min="0" step="1" placeholder="35"/></div>
+        <div class="field"><label>Remote Days / week</label><input id="a_remote" type="number" min="0" max="5" step="1" placeholder="2"/></div>
+        <div class="field"><label>Vacation Days / yr</label><input id="a_vac" type="number" min="0" max="40" step="1" placeholder="15"/></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Health Plan (1–5)</label><input id="a_health" type="number" min="1" max="5" step="1" placeholder="4"/></div>
+        <div class="field"><label>Growth (1–5)</label><input id="a_growth" type="number" min="1" max="5" step="1" placeholder="5"/></div>
+        <div class="field"><label>Culture (1–5)</label><input id="a_culture" type="number" min="1" max="5" step="1" placeholder="4"/></div>
+      </div>
+    </div>
+
+    <!-- Offer B -->
+    <div class="card">
+      <h2>Offer B</h2>
+      <div class="row2">
+        <div class="field"><label>Role / Company</label><input id="b_title" type="text" placeholder="Full-stack @ Northbyte"/></div>
+        <div class="field"><label>Location</label><input id="b_loc" type="text" placeholder="City, State"/></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Base Salary (USD)</label><input id="b_salary" type="number" step="1000" min="0" placeholder="118000"/></div>
+        <div class="field"><label>Annual Bonus (USD)</label><input id="b_bonus" type="number" step="1000" min="0" placeholder="20000"/></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Equity/RSU (USD/yr)</label><input id="b_equity" type="number" step="1000" min="0" placeholder="10000"/></div>
+        <div class="field"><label>Cost of Living Index <span class="hint">(100 = avg)</span></label><input id="b_coli" type="number" min="60" max="200" step="1" placeholder="98"/></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Commute (one-way, min)</label><input id="b_commute" type="number" min="0" step="1" placeholder="12"/></div>
+        <div class="field"><label>Remote Days / week</label><input id="b_remote" type="number" min="0" max="5" step="1" placeholder="3"/></div>
+        <div class="field"><label>Vacation Days / yr</label><input id="b_vac" type="number" min="0" max="40" step="1" placeholder="20"/></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Health Plan (1–5)</label><input id="b_health" type="number" min="1" max="5" step="1" placeholder="5"/></div>
+        <div class="field"><label>Growth (1–5)</label><input id="b_growth" type="number" min="1" max="5" step="1" placeholder="4"/></div>
+        <div class="field"><label>Culture (1–5)</label><input id="b_culture" type="number" min="1" max="5" step="1" placeholder="5"/></div>
+      </div>
+    </div>
+
+    <!-- Weights & actions -->
+    <div class="card card--full">
+      <h2>Weights & Settings</h2>
+      <details class="weights" open>
+        <summary>Adjust category weights</summary>
+        <div class="slider">
+          <label>Compensation <span id="w_comp_val" class="chip">40%</span></label>
+          <input id="w_comp" type="range" min="0" max="100" value="40" />
+        </div>
+        <div class="slider">
+          <label>Commute / Flex <span id="w_commute_val" class="chip">20%</span></label>
+          <input id="w_commute" type="range" min="0" max="100" value="20" />
+        </div>
+        <div class="slider">
+          <label>Growth <span id="w_growth_val" class="chip">20%</span></label>
+          <input id="w_growth" type="range" min="0" max="100" value="20" />
+        </div>
+        <div class="slider">
+          <label>Culture <span id="w_culture_val" class="chip">10%</span></label>
+          <input id="w_culture" type="range" min="0" max="100" value="10" />
+        </div>
+        <div class="slider">
+          <label>Benefits <span id="w_benefits_val" class="chip">10%</span></label>
+          <input id="w_benefits" type="range" min="0" max="100" value="10" />
+        </div>
+        <div class="slider">
+          <label>Value of Time ($/hr) <span id="time_value_val" class="chip">$30</span></label>
+          <input id="time_value" type="range" min="5" max="100" value="30" />
+        </div>
+      </details>
+
+      <div class="actions">
+        <button id="compareBtn" class="btn btn-primary">Compare →</button>
+        <button id="demoBtn" class="btn btn-alt">Load Demo</button>
+        <button id="exportBtn" class="btn btn-ghost">Export JSON</button>
+        <label class="btn btn-ghost file-label">
+          Import JSON
+          <input id="importFile" type="file" accept="application/json" hidden />
+        </label>
+        <button id="resetBtn" class="btn btn-ghost">Reset</button>
+        <a class="btn btn-link" href="index.html">Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast">Saved</div>
+<script src="app.js"></script>
+<script>window.JobCompare?.initCompare?.();</script>
+</body>
+</html>
